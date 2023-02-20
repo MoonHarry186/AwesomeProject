@@ -45,7 +45,7 @@ function ReactNative() {
        </View>
        <View>
           <Text style={styles.h2}>Debug</Text>
-          <Text style={styles.text}>Press <Text style={{fontWeight: "600"}}>menu button</Text> or <Text style={{fontWeight: "600"}}>Shake</Text> your device to open the React Native dubug menu</Text>
+          <Text style={styles.text}>Presss <Text style={{fontWeight: "600"}}>menu button</Text> or <Text style={{fontWeight: "600"}}>Shake</Text> your device to open the React Native dubug menu</Text>
        </View>
       </View>
    </>
