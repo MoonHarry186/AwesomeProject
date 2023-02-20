@@ -1,118 +1,55 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+import React from "react";
+import { SectionList, StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    padding: 20,
+    rowGap: 12
   },
-  sectionTitle: {
-    fontSize: 24,
+  h1: {
+    fontSize: 28,
     fontWeight: '600',
+    color: '#000'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
+  h2: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#000'
+  },
+  text: {
+    fontSize: 16,
     fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+    color: '#000'
+  }
+})
 
-export default App;
+function ReactNative() {
+  return ( 
+   <>
+      <ImageBackground
+          source={{
+            uri: 'https://blog.vietnamlab.vn/content/images/1WMYV3kCJY853-E2c-prAB31YcCb261my.png'
+          }}
+          style={{width: '100%', height: 200, flexDirection: 'column', justifyContent: 'center'}}
+      >
+        <Text style={{...styles.h1, textAlign: 'center'}}>Welcome to React</Text>
+      </ImageBackground>
+      <View style={styles.container}>
+       <View>
+          <Text style={styles.h2}>Step One</Text>
+          <Text style={styles.text}>Edit <Text style={{fontWeight: "600"}}>App.js</Text> to change this screen and then come back to see your edits</Text>
+       </View>
+       <View>
+          <Text style={styles.h2}>See your changes</Text>
+          <Text style={styles.text}>Double tab <Text style={{fontWeight: "600"}}>R</Text> on your keyboard to reload your app's code</Text>
+       </View>
+       <View>
+          <Text style={styles.h2}>Debug</Text>
+          <Text style={styles.text}>Press <Text style={{fontWeight: "600"}}>menu button</Text> or <Text style={{fontWeight: "600"}}>Shake</Text> your device to open the React Native dubug menu</Text>
+       </View>
+      </View>
+   </>
+   );
+}
+
+export default ReactNative;
